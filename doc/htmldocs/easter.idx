@@ -1,0 +1,2 @@
+nimTitle	easter	easter.html	module src/easter		0
+nim	gregorianEasterSundayMMDD	easter.html#gregorianEasterSundayMMDD,int	proc gregorianEasterSundayMMDD(year: int): Option[tuple[month: int, monthday: int]]		26
