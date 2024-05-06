@@ -9,14 +9,13 @@ task  runTests, "run all tests":
   echo "======================="
   echo "Start of task:  tests.."
   echo "======================="
-  for subDir in walkDirRec(dir = ".", yieldFilter = {pcDir}, 
-                           followFilter = {pcDir}, relative = false, 
-                           checkDir = true):
-    for f in listFiles(dir = subDir):
-      let (dir, name, ext) = splitFile(f)
-      if ext.toLowerAscii == ".nim"  and  name.toLowerAscii.endsWith("tests"):
-        withDir(dir):
-          exec fmt"""nim  c  -r  {name.addFileExt(ext)}"""
+  for file in walkDirRec(dir = ".", checkDir = true):
+    let (dir, name, ext) = splitFile(file)
+    if ext == ".nim"  and  (name.toLowerAscii.startsWith("test") or 
+                            name.toLowerAscii.endsWith("test") or 
+                            name.toLowerAscii.endsWith("tests")):
+      withDir(dir):
+        exec fmt"""nim  c  -d:release  -r  {name.addFileExt(ext)}"""
   echo "==========="
   echo "End of task"
   echo "==========="
