@@ -8,8 +8,9 @@ const
   binDir = "./bin"
   tstDir = "./tst"
   runTestsTasks = "runTests"
-  htmldocsDir = "./doc/htmldocs"
+  htmldocsDir = "./docs"
   mainfile = srcDir.joinPath("easter.nim")
+  gitUrl = "https://github.com/GeK2K/easter.git"
 
 
 # procs
@@ -31,8 +32,8 @@ proc  runNimDoc() =
   echo "====================================="
   echo "Start of task:  document generation.."
   echo "====================================="
-  exec fmt"""nim  doc  --project  --index:on  """ &
-       fmt"""--outdir:{htmldocsDir}  {mainfile}""""
+  exec "nim  doc  --project  --index:on  " &
+       fmt"""--outdir:{htmldocsDir}  --git.url:{gitUrl}  {mainfile}""""
   echo "==========="
   echo "End of task"
   echo "==========="

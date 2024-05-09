@@ -1,33 +1,51 @@
-Easter
-======
+# Easter
 
-The date of Easter varies from year to year but this date can be calculated 
-for any year (past, present or future). This is what the main `proc` of this 
-module does: for a given year, it returns the Gregorian Easter Sunday of the
-corresponding year. The implemented algorithm is described [here][1].
+[![license]](License.md)
 
-Installation
-------------
+Unlike Christmas which is always on December 25, the date of Easter Sunday varies from year to year. However, there are algorithms that allow you to calculate this date for any past, present or future year.
 
-Use the [Nimble][2] package manager to add `easter` to an 
-existing project. Add the following to its .nimble file:
+The algorithm that was implemented in this module is described [here][1] and its results were **successfully compared to the 518 Easter Sunday dates** that can be found on these webpages:
 
-```nim
-requires "easter >= 0.1.0 & < 0.2.0"
+  - http://palluy.fr/index.php?page=1583-a-1600-apres-paques
+  - https://www.census.gov/data/software/x13as/genhol/easter-dates.html
+
+
+## Compatibility
+
+Nim +2.0.0
+
+
+## Installation
+
+```
+nimble install easter
 ```
 
-Usage
------
+
+## Add `easter` to a Nim project
+
+Add the following instruction to the .nimble file of the project:
+
+```nim
+requires "easter >= 0.1.0"
+```
+
+
+## Examples
 
 ```nim
 import easter
 
-# the 'gregorianEasterSundayMMDD' proc returns an Option 
-# so we use the 'get' proc to get the value
-let easterSunday2054 = gregorianEasterSundayMMDD(2054).get
+let easterSunday2054 = gregorianEasterSundayMMDD(2054)
 
-doAssert:  easterSunday2054 == (month: 3, monthday: 29)
+# the 'gregorianEasterSundayMMDD' proc returns an Option
+doAssert:  easterSunday2054 is Option[(int, int)]
+doAssert:  get(easterSunday2054) == (month: 3, monthday: 29)
 ```
+
+## Docs
+
+[Read the docs](https://nitely.github.io/nim-regex/)
 
 
 [1]: https://en.wikipedia.org/wiki/Date_of_Easter#Anonymous_Gregorian_algorithm
