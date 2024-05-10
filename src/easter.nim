@@ -3,7 +3,7 @@
 easter
 ======
 The function of this module returns the **Gregorian 
-Easter day** of the year given to it as a parameter.
+Easter Sunday** of the year given to it as a parameter.
 
 This calculation engine is useful because the day of 
 Easter varies from year to year (unlike Christmas, 

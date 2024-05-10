@@ -1,6 +1,9 @@
 # Easter
 
-[![license]](License.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
+## Introduction
 
 Unlike Christmas which is always on December 25, the date of Easter Sunday varies from year to year. However, there are algorithms that allow you to calculate this date for any past, present or future year.
 
@@ -15,23 +18,21 @@ The algorithm that was implemented in this module is described [here][1] and its
 Nim +2.0.0
 
 
-## Installation
+## Getting started
 
-```
+Install `easter` using `nimble`:
+
+```text
 nimble install easter
 ```
 
+or add a dependency to the `.nimble` file of your project:
 
-## Add `easter` to a Nim project
-
-Add the following instruction to the .nimble file of the project:
-
-```nim
+```text
 requires "easter >= 0.1.0"
 ```
 
-
-## Examples
+and start using it:
 
 ```nim
 import easter
@@ -43,9 +44,10 @@ doAssert:  easterSunday2054 is Option[(int, int)]
 doAssert:  get(easterSunday2054) == (month: 3, monthday: 29)
 ```
 
-## Docs
 
-[Read the docs](https://nitely.github.io/nim-regex/)
+## Documentation
+
+[API Reference](https://gek2k.github.io/easter/)
 
 
 [1]: https://en.wikipedia.org/wiki/Date_of_Easter#Anonymous_Gregorian_algorithm
