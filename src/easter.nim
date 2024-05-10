@@ -88,9 +88,3 @@ func julianEasterSundayMMDD*(year: int):
     let month = (d+e+114) div 31
     let day = ((d+e+114) mod 31) + 1
     result = some((month, day))
-
-let iooo = gregorianEasterSundayMMDD(2024)
-let daaa = julianEasterSundayMMDD(2024)
-
-echo iooo
-echo daaa
