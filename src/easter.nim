@@ -69,3 +69,28 @@ func  gregorianEasterSundayMMDD*(year: int):
     #let o = (h+l-7*m+114) mod 31
     let p = (h+l-7*m+33*n+19) mod 32
     result = some((n, p))
+
+func julianEasterSundayMMDD*(year: int):
+                                  Option[tuple[month: int, monthday: int]]=
+  #[
+  The algorithm is taken from the same wikipedia article
+
+    - https://en.wikipedia.org/wiki/Date_of_Easter#Meeus's_Julian_algorithm
+    
+  ]#
+
+  if year > 33:
+    let a = year mod 4
+    let b = year mod 7
+    let c = year mod 19
+    let d = (19*c + 15) mod 30
+    let e = (2*a+4*b-d+34) mod 7
+    let month = (d+e+114) div 31
+    let day = ((d+e+114) mod 31) + 1
+    result = some((month, day))
+
+let iooo = gregorianEasterSundayMMDD(2024)
+let daaa = julianEasterSundayMMDD(2024)
+
+echo iooo
+echo daaa
