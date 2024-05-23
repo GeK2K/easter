@@ -18,6 +18,10 @@ The algorithm that was implemented in this module is described [here][1] and its
 Nim +2.0.0
 
 
+## Main dependencies
+
+Nim standard library only.
+
 ## Getting started
 
 Install `easter` using `nimble`:
@@ -40,6 +44,8 @@ import easter
 let easterSunday2054 = gregorianEasterSundayMMDD(2054)
 
 # the 'gregorianEasterSundayMMDD' proc returns an Option
+# for the reasons given in the documentation
+
 doAssert:  easterSunday2054 is Option[(int, int)]
 doAssert:  get(easterSunday2054) == (month: 3, monthday: 29)
 ```
