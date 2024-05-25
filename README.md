@@ -5,9 +5,13 @@
 
 ## Introduction
 
-Unlike Christmas which is always on December 25, the date of Easter Sunday varies from year to year. However, there are algorithms that allow you to calculate this date for any past, present or future year.
+Unlike Christmas which is always on December 25, the date of Easter Sunday 
+varies from year to year. However, there are algorithms that allow you to 
+calculate this date for any past, present or future year.
 
-The algorithm that was implemented in this module is described [here][1] and its results were **successfully compared to the 518 Easter Sunday dates** that can be found on these webpages:
+The algorithm that was implemented in this module is described [here][1] 
+and its results were **successfully compared to the 518 Easter Sunday 
+dates** that can be found on these webpages:
 
   - http://palluy.fr/index.php?page=1583-a-1600-apres-paques
   - https://www.census.gov/data/software/x13as/genhol/easter-dates.html
@@ -18,9 +22,10 @@ The algorithm that was implemented in this module is described [here][1] and its
 Nim +2.0.0
 
 
-## Main dependencies
+## Dependencies
 
 Nim standard library only.
+
 
 ## Getting started
 
@@ -53,7 +58,7 @@ doAssert:  get(easterSunday2054) == (month: 3, monthday: 29)
 
 ## Documentation
 
-[API Reference](https://gek2k.github.io/easter/)
+[API Reference](https://gek2k.github.io/easter/easter.html)
 
 
 [1]: https://en.wikipedia.org/wiki/Date_of_Easter#Anonymous_Gregorian_algorithm
